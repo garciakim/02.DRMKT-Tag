@@ -31,7 +31,18 @@ Primary use:
   src: url('../fonts/Poppins/Poppins-Black.ttf'); 
 }
 
+.main-link a {
+  border:none !important;
+  text-decoration: none;
+}
 
+.annoying-tooltip {
+  display:inline-block;
+  padding: 15px 10px;
+  position:absolute;
+  bottom:0;
+  
+}
 /*//////////////////////////////////////////////////////////////////
 [ RS PLUGIN ]*/
 /*---------------------------------------------*/
@@ -89,7 +100,7 @@ Primary use:
 .m1-txt1 {
   font-family: Poppins-Regular;
   font-size: 18px;
-  color: #555;
+  color: rgba(255,255,255,0.5);
   line-height: 1.2;
   text-transform: uppercase;
 }
@@ -109,12 +120,20 @@ Primary use:
 
 .l1-txt2 {
   font-family: Poppins-Black;
-  font-size: 120px;
+  font-size: 80px;
   line-height: 1;
   color: #fff;
   text-transform: uppercase;
 }
 
+.l1-txt3 {
+  font-family: Poppins-Thin;
+  font-size: 30px;
+  line-height: 1.1;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
 
 
 /*==================================================================
