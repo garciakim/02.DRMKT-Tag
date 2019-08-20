@@ -165,11 +165,9 @@
 		  	}
 	  	}
 		window.dataLayer = window.dataLayer || [];
-	  	dataLayer = {
-	  		"userInfo":{
-		  		"destination_area":airportSerial(),
-		  		"origin_area": airportSerial()
-		  	},
-		}
+	  	dataLayer.push({
+		  	"destination_area":airportSerial(),
+		  	"origin_area": airportSerial()
+		})
 	</script>
 </html>
