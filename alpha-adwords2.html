@@ -151,10 +151,6 @@
 		  		"products":prodNewArr(),
 		  		"totalQty":0
 		  	},
-		  	"userInfo":{
-		  		"destination_area":airportSerial(),
-		  		"origin_area": airportSerial()
-		  	},
 		  	"navigation":{
 		  		"pageReferer":document.referrer,
 		  		"pageType":"searchresults",
@@ -168,5 +164,12 @@
 		  		"pageNumber":2
 		  	}
 	  	}
+		window.dataLayer = window.dataLayer || [];
+	  	dataLayer = {
+	  		"userInfo":{
+		  		"destination_area":airportSerial(),
+		  		"origin_area": airportSerial()
+		  	},
+		}
 	</script>
 </html>
