@@ -39,11 +39,26 @@
         }
      	return randomSerial;
     }
-    function pushtoNewarr(){
+    function prodNewArr(){
 		var newArr = [];
     		newArr.push(generateSerial(1), generateSerial(2),generateSerial(3),generateSerial(4),generateSerial(4)) //lol sorry lazy
     		return newArr;
     }
+
+    function airportSerial() {
+    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',        
+        serialLength = 3,
+        randomSerial = "",       
+        i,
+        randomNumber;
+		
+		for (i = 0; i < serialLength; i = i + 1) {
+			randomNumber = Math.floor(Math.random() * chars.length);
+	        randomSerial += chars.substring(randomNumber, randomNumber + 1);
+        }
+     	return randomSerial;
+    }
+   
 	</script>
 
 
@@ -133,12 +148,12 @@
 		  		"totalValueInVat":Math.floor(Math.random() * 20),
 		  		"totalValueExVat":10.00,
 		  		"DiscountValue":0.0,
-		  		"products":pushtoNewarr(),
+		  		"products":prodNewArr(),
 		  		"totalQty":0
 		  	},
 		  	"userInfo":{
-		  		"segmentID":"DEFAULT",
-		  		"customerType":"business"
+		  		"destination_area":airportSerial(),
+		  		"origin_area": airportSerial()
 		  	},
 		  	"navigation":{
 		  		"pageReferer":document.referrer,
