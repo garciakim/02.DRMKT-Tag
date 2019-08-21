@@ -163,16 +163,17 @@
 		  		"pageType":"searchresults",
 		  		"pageName":"search",
 		  		"currentDomain":window.location.hostname,
-		  		"currentUrl":window.location.href,
-		  		
+		  		"currentUrl":window.location.href	  		
 		  	}
 	  	}
 		window.dataLayer = window.dataLayer || [];
 	  	dataLayer.push({
+		  	"event": "Flight Information",
 		  	"destination_area":airportSerial(),
 		  	"origin_area": airportSerial(),
 		  	"travel_dest": airportSerial(),
-		  	"travel_arrival": airportSerial()
-		})
+		  	"travel_arrival": airportSerial()},{
+		  	"hotel_info_id": generateSerial()
+		});
 	</script>
 </html>
