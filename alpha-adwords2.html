@@ -62,6 +62,7 @@
 	</script>
 
 
+
 	<!--== Localfile ===-->	
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -74,10 +75,7 @@
 <!--===============================================================================================-->	
 	<!--  -->
 	<div class="simpleslide100">
-		<div class="simpleslide100-item bg-img1" style="background-image: url('images/bg01.jpg');"></div>
-		<div class="simpleslide100-item bg-img1" style="background-image: url('images/bg02.jpg');"></div>
 		<div class="simpleslide100-item bg-img1" style="background-image: url('images/bg03.jpg');"></div>
-		<div class="simpleslide100-item bg-img1" style="background-image: url('images/bg04.png');"></div>
 	</div>
 
 	<div class="flex-col-c-sb size1 overlay1">
@@ -126,6 +124,8 @@
 		</div>
 	</div>
 
+	
+</body>
 	<!--== Script ===-->	
 	<script
 	  	src="https://code.jquery.com/jquery-3.4.1.js"
@@ -139,7 +139,13 @@
 		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
 		rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
 		crossorigin="anonymous">
-</body>
+	<script>
+		$(document).ready(function(){
+			
+			$('body').fadeIn(500);
+		});
+	</script>
+	
 	<script>
 	  	window.signalData = window.signalData || [];
 		signalData = {
@@ -148,8 +154,10 @@
 		  		"totalValueInVat":Math.floor(Math.random() * 20),
 		  		"totalValueExVat":10.00,
 		  		"DiscountValue":0.0,
-		  		"products":prodNewArr(),
 		  		"totalQty":0
+		  	},
+		  	"ecommerce":{
+		  		"ecomm_products":prodNewArr(),
 		  	},
 		  	"navigation":{
 		  		"pageReferer":document.referrer,
@@ -157,11 +165,7 @@
 		  		"pageName":"search",
 		  		"currentDomain":window.location.hostname,
 		  		"currentUrl":window.location.href,
-		  		"currencyISO":"USD",
-		  		"currencySymbol":"$",
-		  		"countryLocale":"en_US",
-		  		"pageLanguage":"en",
-		  		"pageNumber":2
+		  		
 		  	}
 	  	}
 		window.dataLayer = window.dataLayer || [];
