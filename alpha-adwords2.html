@@ -26,7 +26,7 @@
 	  gtag('config', 'AW-840460614');
 	</script>
 	<script>
-	function generateSerial() {
+	function generateSerial(){
     var chars = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',        
         serialLength = 10,
         randomSerial = "",       
@@ -39,6 +39,7 @@
         }
      	return randomSerial;
     }
+
     function prodNewArr(){
 		var newArr = [];
     		newArr.push(generateSerial(1), generateSerial(2),generateSerial(3),generateSerial(4),generateSerial(4)) //lol sorry lazy
@@ -105,6 +106,8 @@
 					<a href="alpha-adwords6.html"><span class="l1-txt3 dis-block p-b-20">Complete, Conversion & Purchase Pagetype</span></a>
 				</div>
 			</div>
+			<div class="job_id" ></div>
+
 
 		</div>
 
@@ -166,14 +169,21 @@
 		  		"currentUrl":window.location.href	  		
 		  	}
 	  	}
+	  	
+	  	
+		document.querySelector('div.job_id').setAttribute('data-content', generateSerial());
+	  	
+
 		window.dataLayer = window.dataLayer || [];
 	  	dataLayer.push({
 		  	"event": "Flight Information",
 		  	"destination_area":airportSerial(),
 		  	"origin_area": airportSerial(),
 		  	"travel_dest": airportSerial(),
-		  	"travel_arrival": airportSerial()},{
+		  	"travel_arrival": airportSerial()
+		  },{
 		  	"hotel_info_id": generateSerial()
 		});
 	</script>
 </html>
+
