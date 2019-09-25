@@ -150,6 +150,19 @@
 	</script>
 	
 	<script>
+		window.dataLayer = window.dataLayer || [];
+	  	dataLayer.push({
+		  	"event": "Flight Information",
+		  	"destination_area":airportSerial(),
+		  	"origin_area": airportSerial(),
+		  	"travel_dest": airportSerial(),
+		  	"travel_arrival": airportSerial()
+		  	},{
+		  	"hotel_info_id": generateSerial()
+			},{
+			"custom_sku_id": generateSerial()
+		});
+		
 	  	window.signalData = window.signalData || [];
 		signalData = {
 		  	"basket":{
@@ -170,7 +183,7 @@
 		  		"currentUrl":window.location.href	  		
 		  	},
 		  	"programid":{
-		  		"module":generateSerial(),	
+		  		"module":generateSerial()
 		  	}
 	  	}
 	  	document.querySelector('.priceGrid ._priceTag elm').textContent.trim()
@@ -180,18 +193,7 @@
 	  	function listingid(){ window.listing_information = generateSerial();} 
 	  	window.listingid();
 
-		window.dataLayer = window.dataLayer || [];
-	  	dataLayer.push({
-		  	"event": "Flight Information",
-		  	"destination_area":airportSerial(),
-		  	"origin_area": airportSerial(),
-		  	"travel_dest": airportSerial(),
-		  	"travel_arrival": airportSerial()
-		  },{
-		  	"hotel_info_id": generateSerial()
-		},{
-			"custom_sku_id": generateSerial()
-		});
+		
 	</script>
 </html>
 
