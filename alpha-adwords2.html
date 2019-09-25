@@ -26,6 +26,14 @@
 	  gtag('config', 'AW-840460614');
 	</script>
 	<script>
+
+
+	document.querySelector('div.job_id').setAttribute('data-content', generateSerial());
+	document.querySelector('div.retail_id').setAttribute('data-product-id', generateSerial());
+	  	
+	function listingid(){ window.listing_information = generateSerial();} 
+	window.listingid();
+
 	function generateSerial(){
     var chars = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',        
         serialLength = 10,
@@ -150,13 +158,6 @@
 	</script>
 	
 	<script>
-		document.querySelector('.priceGrid ._priceTag elm').textContent.trim()
-		document.querySelector('div.job_id').setAttribute('data-content', generateSerial());
-		document.querySelector('div.retail_id').setAttribute('data-product-id', generateSerial());
-	  	
-	  	function listingid(){ window.listing_information = generateSerial();} 
-	  	window.listingid();
-
 		window.dataLayer = window.dataLayer || [];
 	  	dataLayer.push({
 		  	"event": "Flight Information",
@@ -194,7 +195,7 @@
 		  		"module":generateSerial()
 		  	}
 	  	}
-	  
+	  	document.querySelector('.priceGrid ._priceTag elm').textContent.trim()
 		
 	</script>
 </html>
