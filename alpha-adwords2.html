@@ -48,7 +48,7 @@
 		job_x.setAttributeNode(job_y); 
 	}
 
-	function addJobID(){
+	function addRetailID(){
 		var job_x = document.querySelector('div.retail_id');
 		var job_y = document.createAttribute('data-content');
 		job_y.value = generateSerial(),
@@ -87,7 +87,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 </head>
-<body onload="addJobID()">
+<body>
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPKK425" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
@@ -165,6 +165,10 @@
 		$(document).ready(function(){			
 			$('body').fadeIn(500);
 		});
+		window.onload=function(){
+			addRetailID();
+			addJobID();
+		}
 	</script>
 	
 	<script>
