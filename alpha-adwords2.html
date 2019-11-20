@@ -28,7 +28,12 @@
 	<script>
 
 
-	document.querySelector('div.job_id').setAttribute('data-content', generateSerial());
+	function addJobID(){
+		var job_x = document.querySelector('div.job_id'),
+		var job_y = document.createAttribute('data-content'),
+		job_y.value = generateSerial(),
+		job_x.setAttributeNode(job_y); 
+	}
 	document.querySelector('div.retail_id').setAttribute('data-product-id', generateSerial());
 	  	
 	function listingid(){ window.listing_information = generateSerial();} 
