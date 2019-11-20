@@ -179,10 +179,7 @@
 		  	"hotel_info_id": generateSerial()
 			},{
 			"custom_sku_id": generateSerial()
-		});
-
-	  	window.signalData = window.signalData || [];
-		signalData.push({
+			},{
 		  	"basket":{
 		  		"subTotalValue":Math.floor(Math.random() * 1000),
 		  		"totalValueInVat":Math.floor(Math.random() * 20),
@@ -204,8 +201,8 @@
 		  	"programid":{
 		  		"module":generateSerial()
 		  	}
-	  	}
-	  })
+	  	})
+	
 	  	document.querySelector('.priceGrid ._priceTag elm').textContent.trim()
 		
 	</script>
