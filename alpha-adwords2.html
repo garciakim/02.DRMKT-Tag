@@ -169,6 +169,8 @@
 	
 	<script>
 		window.dataLayer = window.dataLayer || [];
+		window.signalData = window.signalData || [];
+	  	
 	  	dataLayer.push({
 		  	"event": "Flight Information",
 		  	"destination_area":airportSerial(),
@@ -179,29 +181,31 @@
 		  	"hotel_info_id": generateSerial()
 			},{
 			"custom_sku_id": generateSerial()
-			},{
-		  	"event": "ebasket",
-		  	"subTotalValue":Math.floor(Math.random() * 1000),
-		  	"totalValueInVat":Math.floor(Math.random() * 20),
-		  	"totalValueExVat":10.00,
-		  	"DiscountValue":0.0,
-		  	"totalQty":0
-		  	},{
-		  	"event": "ecommerce",
-		  	"ecomm_products":prodNewArr(),
-		  	"promo_deal_id": generateSerial()
-		  	},{
-		  	"event": "navigation",
-		  	"pageReferer":document.referrer,
-		  	"pageType":"searchresults",
-		  	"pageName":"search",
-		  	"currentDomain":window.location.hostname,
-		  	"currentUrl":window.location.href	  		
-		  	},{
-		  	"event": "programid",
-		  	"module":generateSerial()
-		  	})
-	
+		});
+
+		signalData = {
+		  	"basket":{
+		  		"subTotalValue":Math.floor(Math.random() * 1000),
+		  		"totalValueInVat":Math.floor(Math.random() * 20),
+		  		"totalValueExVat":10.00,
+		  		"DiscountValue":0.0,
+		  		"totalQty":0
+		  	},
+		  	"ecommerce":{
+		  		"ecomm_products":prodNewArr(),
+		  		"promo_deal_id": generateSerial()
+		  	},
+		  	"navigation":{
+		  		"pageReferer":document.referrer,
+		  		"pageType":"searchresults",
+		  		"pageName":"search",
+		  		"currentDomain":window.location.hostname,
+		  		"currentUrl":window.location.href	  		
+		  	},
+		  	"programid":{
+		  		"module":generateSerial()
+		  	}
+	  	}
 	  	document.querySelector('.priceGrid ._priceTag elm').textContent.trim()
 		
 	</script>
