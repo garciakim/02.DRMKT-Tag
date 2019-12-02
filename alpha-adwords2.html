@@ -41,19 +41,6 @@
      	return randomSerial;
     }
 
-    function addJobID(){
-		var job_x = document.querySelector('div.job_id');
-		var job_y = document.createAttribute('data-content');
-		job_y.value = generateSerial(),
-		job_x.setAttributeNode(job_y); 
-	}
-
-	function addRetailID(){
-		var job_x = document.querySelector('div.retail_id');
-		var job_y = document.createAttribute('data-content');
-		job_y.value = generateSerial(),
-		job_x.setAttributeNode(job_y); 
-	}
 	  	
 	function listingid(){ window.listing_information = generateSerial();} 
 	window.listingid();
@@ -63,7 +50,11 @@
     		newArr.push(generateSerial(1), generateSerial(2),generateSerial(3),generateSerial(4),generateSerial(4)) //lol sorry lazy
     		return newArr;
     }
-
+    function injectIDs(){ 
+     	document.querySelector('.job_id').setAttribute("data-content", generateSerial());
+     	document.querySelector('.retail_id').setAttribute("data-content", generateSerial());
+    }
+    
     function airportSerial() {
     var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',        
         serialLength = 3,
@@ -87,7 +78,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 </head>
-<body>
+<body onload="injectIDs()">
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPKK425" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
@@ -124,8 +115,8 @@
 					<a href="alpha-adwords6.html"><span class="l1-txt3 dis-block p-b-20">Complete, Conversion & Purchase Pagetype</span></a>
 				</div>
 			</div>
-			<div class="job_id" style="display:hidden" ></div>
-			<div class="retail_id" style="display:hidden" ></div>
+			<div class="job_id" data-content="" style="display:hidden" ></div>
+			<div class="retail_id" data-content="" style="display:hidden" ></div>
 
 
 		</div>
@@ -207,6 +198,7 @@
 		  	}
 	  	}
 	  	document.querySelector('.priceGrid ._priceTag elm').textContent.trim()
+		
 		
 	</script>
 </html>
