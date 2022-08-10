@@ -1,6 +1,6 @@
 ## 
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://garciakim.github.io/02.DRMKT-Tag/images/site_screenshot.png)
 
 
 # Google Ads and Analytics Tag
