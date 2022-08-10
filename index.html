@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tagging - Alpha 1126</title>
+	<meta name="description" content="" />
+	<link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://github.githubassets.com/favicon.ico">
+
+	<!-- Other -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;600&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="css/style.css" rel="stylesheet">
+
+	<!-- Other stuff -->
+	<script type="text/javascript">
+		async function getSafeInfo(){
+			try{
+				const request = await fetch("https://ipinfo.io/json?token=096b6507cf4069");
+				const json = await request.json();
+				return json;
+			}
+			catch(error){
+				console.error("Are you sure it's not private?");
+			}
+		}
+		const SafeInfo = getSafeInfo();
+		SafeInfo
+		.then((json) => { 		  		
+			window.dataLayer = window.dataLayer || []; 
+		  	dataLayer.push(json);
+		})
+	</script>
+	<!-- Google Tags -->
+</head>
+<body>
+	<header></header>
+	<main>
+		
+		<div id="container">
+			<div class="cc-content">
+				<div class="WIP-notice">Work In Progress</div>
+				<div class="header">
+					<div><h5>Tagging - Alpha 1126</h5></div>
+					<nav>
+						<ul>
+							<li><a href="index.html">Hello</a></li>
+							<li><a href="google-ads-index.html">Google Ads</a></li>
+							<li><a href="google-analytics-index.html">Google Analytics</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div>
+				<p>This is only a small tagging project implementing Dynamic Remarketing tag for Google Ads and Google Analytics using their standalone code snippet or with the help of Google Tag Manager.</p>
+				<p>I will post the sample HTML elements inside the &LT;code&GT; element and will try to create different scenarios and setups on how to fetch the needed values and variables for each business verticals.</p>
+				<p>This is only a simple coding task, nothing important.</p>
+			</div>
+			</div>
+			<div class="borders">
+				<div>
+					<pre><code>
+					<h5>Note</h5>
+					No tags are firing on this page.
+					</code></pre>		
+				</div>
+			</div>
+			<div class="cc-content">
+				<div>
+					
+				</div>
+			</div>
+		
+		</div>
+	</main>
+	<footer></footer>
+</body>
+</html>
