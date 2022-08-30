@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>reCAPTCHA</title>
+<style type="text/css">
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7mxKKTU1Kvnz.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4WxKKTU1Kvnz.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7WxKKTU1Kvnz.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCRc4AMP6lbBP.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fABc4AMP6lbBP.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCBc4AMP6lbBP.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBxc4AMP6lbBP.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCxc4AMP6lbBP.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fChc4AMP6lbBP.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCRc4AMP6lbBP.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfABc4AMP6lbBP.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCBc4AMP6lbBP.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBxc4AMP6lbBP.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCxc4AMP6lbBP.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfChc4AMP6lbBP.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBBc4AMP6lQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+</style>
+<link rel="stylesheet" type="text/css" href="bframe_data/styles__ltr.css">
+<script nonce="" type="text/javascript">window['__recaptcha_api'] = 'https://www.google.com/recaptcha/enterprise/';</script>
+<script type="text/javascript" src="recaptcha__en.js" nonce="">
+      
+    </script></head>
+<body data-new-gr-c-s-check-loaded="8.902.0" data-gr-ext-installed="" style="height: 100%;"><input type="hidden" id="recaptcha-token" value="03ANYolquyuNY-PjOtLw2C9BOMiULA9rMcaNEJZYAUIgIj009clSl748D5SaMZCL3ZBrnJNFSJIw_r1AhVlZJ8AOr8Unj9xX3P_kGYRHYfZUhp5sKrOsh1V38AKkMBX-Ah5sNJSgnifDFbxNw5k7QKxu8gKtFjR5nkWGBTyNcjEsTtWa7lmLrnVfAKb1Vdte7oSqlDM4yrPqy0JAgiV7Xu916O4ExMk0FWSX5I5TEdpkLu1HymL8pp3SzXhXxEiOEEIhULobEbBcvNjAtpC6ndFE-e4fZJNYphLhBQyhT5D00ecq3-XxXwQI1C5ihKwQfAv2JSD8UVHYjTgKVbA5L05gNruyw8kSlpCxpopfGJcqyDKn23jxrSD3Xm70vrOr9dYAkoptprej-kHE1tU2ikJMWRh6zh-IFUzA7IZmbEo2okaJ02CYEBVx1vxU8Y7Cfaz8OeUozb1016AQ7NNti0efWNPU_R3ylS4McI7dGB4n97Cp8Mnnsii-KimtJyFGlR7p0PnnCJLBDF1AiDve00YqUYPUupmTUKZxwUMCsXMmAPPJ5UiCNlfz-sG_HZWjFiIg3DIz0ZOtZ31WlgdVp5ZOzz9_a7aSZBkNiox1s7u0dThjtdKb8lsPsYm9enLFxG-W5Ac-pZdp10K6MC6CB3q7uc4Lfx5_x8CN5DD8YcoXKGRkbIXwwFKOaxB8Fmrkrzb4y-TLPKxsGlrrwCLRiFo88PlJ_umsHs-USpDrVdBwBFjaUTWPy32xBmKI9LOqeYsZSbgYSJfJxaGzlyzb55jjbv8tpq7E0X8Blf04nr_PO0HFYex5us1046W2vTvDgrvJH3w-5IYDJeOKYrLvYBqcnUwS4HAgjytNr4EywvobdZEq4BF0Nr-_oBimNLlQ42zKHn7u3P0LK2Lnsmd6mDXnbRWQjsTqpdqdN6sGD4ukZsBYSg67nlBaEZ70kNMyQHI7oGz6YjJuMM5jyRSVhUUp2zJZrE9M0dsqU2JIjlncSWsiFrAZg7p_ouOGisEzb7X2bIeg5-oEb90iKdbu7KgE5vnhWVyhn46Yh1znrXc5l6YFIGPzo4RVQHHD9rAuaOHlM3kIQSzWISH8rPiK6bzhxnbPVxszIe3H9roTIjmQFJGFxomi81FLfkZIdVZDMM_6d4BXOl8o4QgTcZz_f_PXmJ3PuCyaIRJgU_-BDr43x9X80Lejv0ktENu0SDTxdlKRV44g8yx5FatpSZfeK1S8MRD05XjCjxM3RBpzqDcRWkV7q3Pj1v6zCNIfqpSKczOj2BQrS_s-CLgkoq961A_YQVPQHvUNJV7B5R-GoBILVkswh9Z30dK2NIuHpEpw6LcLgi3MsYYgCekelidVpWIq1AKMDDO-H9uhiGUVd8HLywcoxHWFeR42i41CMz7Oiq8XJqNzh4BdZDl8A4BrBhpntePB2qA-qsJXhyyeEhh_nqhETA7x2mC0sjIra4TupZKc83rxGYm79Uqo1iueBN3d9Y131lxeTWq823WO2MgJrWrctrq629TlBhtgacJHhAnBfX2Vy-Ge4nzHWqOrXFffRSiBx8hqlaY800CGqhJ8Dza_g8Fvcx2L1D-vSA-gX7K7a0_ijZMY9Iz_uSo0eittu0HBHA4uH2jL-mUtIwM4Tcz4veL8wxA2absnkQdz1cJOAF5vBf60zf2sOwVyzR13iTraeVAhHEVk5Y77mAamtFHaPDniEGwcaZLN9bHFOAjMzHkhVOQbldtGNkWULgNbkk2IrK-Sxulr4pNuVMNBkhqltj4kxaXcWnLmVyEPSKkfbQMiJY7LAgDZAzFM4BdN_9xzOXq4I_Y3OHeknej4PxEnjy_D57sIV_SbGBh5FCuBe82Id6Un70sx1eKhMv2UoGUb9kS5X1lFEh71xcbOX7VU_eRVJ1KjNO-upoAO-sH1pIr-xtRgHIKPjX5NkBgW3a7LeN_6yqGOtft8bdD3R-9kvahWojdWMdahjsBuROJPKxQBMfTeQxOkiWh_yG5s1JSYo6c5Gt9CmuS2cnwJsjjMmtq75AxCqQD7WGDeh-3iRWPEHKySXoIdG3juAkrNNn9m-P-YjRCApKZl1u1A-OqQj-c50WhRrJDwesCl1SfsakJBWLkmkR3_VH5IZQozmobv_LXgf5UVEdv-m_G-rNYWUb5Ws_jovr9Emaj5P-9GshwAXut92G6snfD5twa8-3j8HMQERxoWQPPAQ9RQLApT0vwEW5NuwsS3Cv_XVCSHtACmxMp9tiP1PlnclUbhGkERS4ruH5_9DV2k4qbLLjDi8WFRoFyqKnsa7FUBFO4uP-V6n0DV462KGwQ-Q1B3a8w0OFTSzG_WOFwGSU2o1tltB3KBmtHv8C4iosObitISbeIU_MNRAKFd5V_qRHcUdhzVdZGebz1OhH2mzcr9nwiM3S8U2UZTNQ_7vYpTAGb630lD7otQxcTvgWVPv8GEFGYWYkkZ-t0THv8KToxfxIx9t44mvlr6UZ6Foiv7xmnBXbFSlD8bYFSnCcW3j_cGqGw98BLMm4NJrK3VYlyjSzB4ZvieRyU9ONWFdM9SFawyRyELx_I4oI-iNIvNVT-WK4g3FDtU8g79eoGMXEGBfIPW2uwlIuj6a47iiLNqnQJKhzFK0_HArIKoe2IwvzM0if7jPZey930vGk8JFtg80u_8YkKor9zDUP0jhkV_MonsLPPWWia4prysemP6-pwTBg_S6rhov5ToKlBw3sUBdI56N5Dl3Wh-1JIaR3v2gQgCXq1zjo3_zc8alE_TkRHTJjYrq-m5dFJFlTuiCVKf2j4RdS4ZkfsbEDXCvJG5XSWBlvHv3MJ6qxRSeLu0T-ITHGmXG8K3rEYShb8u5cpqq6hByOPfn7wcpxvze9xqGSJkUpY-n2xXI9pBF8jQ74CJkfFlQy55rb8XDK-qfjRrtb_5M3iBr6WGlGVuhPBazGmDsqVsvy-IaG6saFMctxZ1-zO4F-nmOmznCawtTQmRotPJUoyOe05yASRTADiWtH1X75zjeqs2-xH_G08vz0ZakPFqggw8nmo2tmQBnUELFuHhTAd95gexVEnMWrK04VmBV6Q1EfoIZvLRx74QpQMDS302StnvG68Mv-g5FUDtrhZrLN35emDZuZA22tXN2MZD7efVddZqeJyaCss3HIwxlHaDGu76yaijcEO5dpOznYJGZ7IqcPZvXAxzF9B9eqJRXCfzphAlPruHl6kDScm08etot56zQ3mqGdLJOG_X3BcaqrV-N5OyqUDOo5gn5QauUdNY3EUicpdokgUiT950sjjR3bL3ZzDSPHeMJ6pZpcFQu84qTDSZNBVxZCOplYGxVjxC8_BKFTNVwXoTrLNhkCQQuGBKXfpAYAaZXyKxwyD5oeMzmn7w6TxxAWHo5900RAd5xeRbQYNYfwLx438Wsay0_gRHu1Qn6Om8h9KGadukM684ppm9wwCXDAIAn9E7a7av9Vt-Dfr10S1iAHvKH2fxGceeO7afBScz0ySTzb0Cuqt0b6WFQ4pxFaaQr6d2wCgHXP2nKIm6GMzx3RILooCey5VV9YH1jZko0MYHS-Wpm5FvSdfvSaEeziWllDAG2yn0PP1UuC6femFVvskhwGQ0H1nSDgksSs5uIM4AcPq12g1KVI0zKOb55xNV5UXXaY3ONvcTFqucEF-tjyfK1_EHoEf5xY8ej_1Vb4K_fN5_7pzHjrf7eMtf-NGwg2ofzmOu3tUKF6eXju1aOSigDw2o7qpD-lO-i334sw6nQNGWN1Ae1aUnV-ShWwdFLvD15RKb8OPAzFpdtCG2b_MYvAsSPOq7amjpJ2tcjAkobq0jPdXAAzHy4V_o9aYjWh4dDo480fEJnLZU1avR9WPmlaxeN_QPgjXoCc2twR-NPMfuyKmu6igBjrFgl5WHUerspT1UgyDYNgIywK1tPW8lToN-3TV9EvpQhs02F8SgUwn5YjwWpUxrS97HOSFNYZP4ANL-FNwoNZT8U5DRBq7VXsh86yJY2HE03L24_nXsQ7EilVBRtWxKbbDDVFu_ZCfNAG7fZiGAZSeElW1RYnJOnUZB8qfxvXkaHrKLUWIcZcgGH8nZZOUcVt7U4KJt7X4cms-ErcC8sRme9uEEHdZOn9pBC6e-0qsFZy1Kc2XvsfB5-71Vl7U7mbxoMSutcBFThNyu2z2CKcySNdapLMK2rHFdyx0-iHFy8nNt3d-BYPRZuJVQgppZD0HqCtdHbQ0sWzaQ6yuPWOIJbaqL7FmGIM2T4PYtoP4J-TJ41Pyosi0us3BM1pQ0-b160rvFgePlbjoMJLs3GU">
+<script type="text/javascript" nonce="">
+      
+        recaptcha.frame.Main.init("[\x22finput\x22,null,[\x22conf\x22,null,\x226Ld_ad8ZAAAAAAqr0ePo1dUfAi0m4KPkCMQYwPPm\x22,0,null,null,0.75,null,[21]]]");
+      
+    </script><div style=""><div id="rc-imageselect"><div class="rc-imageselect-response-field"></div><span class="rc-imageselect-tabloop-begin" tabindex="0"></span><div class="rc-imageselect-payload"><div class="rc-imageselect-instructions"><div class="rc-imageselect-desc-wrapper"><div class="rc-imageselect-desc-no-canonical" style="width: 252px; font-size: 16px;">Select all images with <strong style="font-size: 28px;">bicycles</strong><span style="font-size: 14px;">Click verify once there are none left</span></div></div><div class="rc-imageselect-progress"></div></div><div class="rc-imageselect-challenge"><div id="rc-imageselect-target" class="rc-imageselect-target" dir="ltr" role="presentation" aria-hidden="true"><table class="rc-imageselect-table-33"><tbody><tr><td role="button" tabindex="4" class="rc-imageselect-tile" aria-label="Image challenge"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 92px; height: 92px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:0%; left: 0%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="5" class="rc-imageselect-tile" aria-label="Image challenge"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 92px; height: 92px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:0%; left: -100%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="6" class="rc-imageselect-tile" aria-label="Image challenge"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 92px; height: 92px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:0%; left: -200%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td></tr><tr><td role="button" tabindex="7" class="rc-imageselect-tile" aria-label="Image challenge"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 92px; height: 92px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:-100%; left: 0%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="8" class="rc-imageselect-tile" aria-label="Image challenge"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 92px; height: 92px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:-100%; left: -100%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="9" class="rc-imageselect-tile" aria-label="Image challenge"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 92px; height: 92px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:-100%; left: -200%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td></tr><tr><td role="button" tabindex="10" class="rc-imageselect-tile" aria-label="Image challenge"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 92px; height: 92px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:-200%; left: 0%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="11" class="rc-imageselect-tile" aria-label="Image challenge"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 92px; height: 92px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:-200%; left: -100%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="12" class="rc-imageselect-tile" aria-label="Image challenge"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 92px; height: 92px"><img class="rc-image-tile-33" src="bframe_data/payload.jpg" alt="" style="top:-200%; left: -200%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td></tr></tbody></table></div></div><div class="rc-imageselect-incorrect-response" style="display:none">Please try again.</div><div aria-live="polite"><div class="rc-imageselect-error-select-more" style="display:none">Please select all matching images.</div><div class="rc-imageselect-error-dynamic-more" style="display:none">Please also check the new images.</div><div class="rc-imageselect-error-select-something" style="display:none">Please select around the object, or reload if there are none.</div></div></div><div class="rc-footer"><div class="rc-separator"></div><div class="rc-controls"><div class="primary-controls"><div class="rc-buttons"><div class="button-holder reload-button-holder"><button class="rc-button goog-inline-block rc-button-reload" title="Get a new challenge" value="" id="recaptcha-reload-button" tabindex="3"></button></div><div class="button-holder audio-button-holder"><button class="rc-button goog-inline-block rc-button-audio" title="Get an audio challenge" value="" id="recaptcha-audio-button" tabindex="1"></button></div><div class="button-holder image-button-holder"><button class="rc-button goog-inline-block rc-button-image" title="Get a visual challenge" value="" style="display: none;" id="recaptcha-image-button" tabindex="0"></button></div><div class="button-holder help-button-holder"><button class="rc-button goog-inline-block rc-button-help" title="Help" value="" id="recaptcha-help-button" tabindex="2"></button></div><div class="button-holder undo-button-holder"><button class="rc-button goog-inline-block rc-button-undo" title="Undo" value="" style="display: none;" id="recaptcha-undo-button" tabindex="0"></button></div></div><div class="verify-button-holder"><button class="rc-button-default goog-inline-block" title="" value="" id="recaptcha-verify-button" tabindex="0">Verify</button></div></div><div class="rc-challenge-help" style="display:none" tabindex="0"></div></div></div><span class="rc-imageselect-tabloop-end" tabindex="0"></span></div></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
